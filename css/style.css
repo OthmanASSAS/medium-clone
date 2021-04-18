@@ -24,9 +24,10 @@
 }
 
 body {
+  font-family: 'Cormorant Garamond', serif;
   font-size: 1.6em; /* base font-size is equivalent "14px" */
-  font-family: 'Roboto', sans-serif;
   line-height: 2rem;
+  color: var(--dark);
 }
 
 h1,
@@ -35,13 +36,11 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Staatliches', cursive;
   margin: 1rem 0;
 }
 
 h3 {
   font-size: 1.8rem;
-  font-weight: 400;
   margin: 1rem 0;
 }
 
@@ -54,12 +53,22 @@ img {
   max-width: 100%; /* pour que les images ne dépassent pas le container */
 }
 
+hr {
+  border: 0;
+  border-bottom: 1px solid var(--gray);
+}
+
+::placeholder {
+  color: var(--dark);
+}
+
 /* utility */
 
 .container {
   max-width: 1100px;
   margin: auto;
-  height: 2000px;
+  height: 1500px;
+  padding: 0 1rem;
 }
 
 .text-primary {
@@ -77,7 +86,7 @@ img {
 
 .btn {
   padding: 1rem;
-  border-radius: 05rem;
+  border-radius: 0.5rem;
   cursor: pointer;
   border: 0;
   transition: all 0.2s;
@@ -92,6 +101,23 @@ img {
 .btn-light:hover {
   background: var(--primary);
   color: #fff;
+}
+
+.btn-dark {
+  border: 1px solid var(--dark);
+  background: var(--dark);
+  color: white;
+}
+
+.btn-dark:hover {
+  border: 1px solid var(--dark);
+  background: white;
+  color: var(--dark);
+}
+
+.mx-l {
+  margin-left: 1rem;
+  margin-right: 1rem;
 }
 
 /* generic */
@@ -181,4 +207,43 @@ nav {
 .article-small .article-content {
   max-height: 6rem;
   overflow: hidden;
+}
+
+/* ads */
+
+.ads {
+  background: var(--gray-light);
+  margin: 2rem 0;
+  display: grid;
+  grid-template-columns: 200px 1fr auto 1fr;
+  grid-template-rows: 1fr auto auto auto 1fr;
+  grid-template-areas:
+    'img . . .'
+    'img . h1 .'
+    'img . p .'
+    'img . form .'
+    'img . . .';
+}
+
+.ads img {
+  grid-area: img;
+}
+.ads h1 {
+  grid-area: h1;
+  font-size: 4rem;
+}
+.ads p {
+  grid-area: p;
+}
+.ads form {
+  grid-area: form;
+}
+
+.ads form input {
+  background: var(--gray-light);
+  border: 0;
+  border-bottom: 1px solid var(--dark);
+  padding: 1rem 0;
+  margin-right: 1rem;
+  outline: 0;
 }
