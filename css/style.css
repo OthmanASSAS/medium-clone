@@ -67,7 +67,7 @@ hr {
 .container {
   max-width: 1100px;
   margin: auto;
-  height: 1500px;
+  height: 2000px;
   padding: 0 1rem;
 }
 
@@ -126,8 +126,6 @@ hr {
   margin-bottom: 2rem;
 }
 
-/* generic */
-
 .article-author {
   font-weight: 700;
   font-size: 1.4rem;
@@ -155,6 +153,7 @@ header a {
 header ul {
   list-style: none;
   display: flex;
+  align-items: center;
 }
 
 header ul li {
@@ -259,6 +258,7 @@ nav {
 .content {
   margin: 3rem 0;
   display: flex;
+  align-items: start;
 }
 
 .articles {
@@ -274,11 +274,12 @@ nav {
     'content img'
     'author img'
     'details img';
+  margin-bottom: 2rem;
 }
 
 .articles article h3,
 .articles article p {
-  margin: 0.4rem 0;
+  margin: 0.2rem 0;
 }
 
 .articles article img {
@@ -303,4 +304,24 @@ nav {
 
 .popular {
   flex: 350px;
+  padding: 0 3rem;
+  position: sticky;
+  top: 45px;
+}
+
+.popular ul li {
+  display: grid;
+  grid-template-columns: 50px auto;
+  place-items: center center;
+  margin-bottom: 1rem;
+}
+
+.popular ul li div:first-child {
+  font-size: 3rem;
+  color: var(--gray-hint);
+}
+
+.popular ul li p,
+.popular ul li h3 {
+  margin: 0.2rem;
 }
